@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 // Storage sdk
-import { appStorage } from "../firebase/config";
+import { appStorage, appFirestore, timestamp } from "../firebase/config";
 
 const useStorage = (file) => {
   const [progress, setProgress] = useState(0);
@@ -10,6 +10,7 @@ const useStorage = (file) => {
   useEffect(() => {
     //create a ref
     const storageRef = appStorage.ref(file.name);
+    const collectionRef = appFirestore.collection("images");
 
     //try to upload the file to the ref
     //async func
@@ -31,6 +32,11 @@ const useStorage = (file) => {
       async () => {
         //get the url of the uploaded image
         const url = await storageRef.getDownloadURL();
+        //make a ref to a collection we want to save the document
+        const createdAt = timestamp();
+
+        collectionRef.add({ url, createdAt });
+
         setUrl(url);
       }
     );
