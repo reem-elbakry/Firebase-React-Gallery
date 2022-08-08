@@ -17,7 +17,6 @@ const useFirestore = (collection) => {
         //snap obj represent a snapshot at that moment in the time of the db collection
         //take a snapshot of the collection and see all the docs at that moment in the time
         //snap contain docs === with every update it takes a snapshot === real-time listening
-        console.log(snap);
         let documents = [];
         snap.forEach((doc) => {
           documents.push({ ...doc.data(), id: doc.id });
