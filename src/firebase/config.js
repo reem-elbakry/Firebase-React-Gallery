@@ -19,7 +19,7 @@ const firebaseConfig = {
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 
-//Initialize Services
+// Initialize Services
 const appStorage = firebase.storage();
 
 const appFirestore = firebase.firestore();
