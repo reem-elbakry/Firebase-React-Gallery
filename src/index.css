@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;700&display=swap");
 
 :root {
-  --primary: #efb6b2;
+  --primary: #363b97;
   --secondary: #4e4e4e;
   --error: #ff4a4a;
 }
@@ -15,7 +15,7 @@ body {
   max-width: 960px;
   margin: 0 auto;
 }
-.title h1 {
+.title span {
   color: var(--primary);
   font-size: 1.2rem;
   letter-spacing: 2px;
@@ -67,7 +67,15 @@ label:hover {
 /* progress bar styles */
 .progress-bar {
   height: 5px;
-  background: var(--primary);
+  background: rgb(54, 59, 151);
+  background: linear-gradient(
+    90deg,
+    rgba(54, 59, 151, 1) 0%,
+    rgba(119, 43, 143, 1) 15%,
+    rgba(221, 63, 38, 255) 25%,
+    rgba(252, 185, 19, 255) 35%,
+    rgba(92, 175, 71, 1) 100%
+  );
   margin-top: 20px;
 }
 
