@@ -1,5 +1,6 @@
 import React from "react";
 import { useState } from "react";
+import ProgressBar from "./ProgressBar";
 
 const UploadForm = () => {
   const [file, setFile] = useState(null);
@@ -13,6 +14,7 @@ const UploadForm = () => {
     let selected = e.target.files[0];
     //store the selected file in local state << if file selected >>
     if (selected && types.includes(selected.type)) {
+      console.log(selected);
       setFile(selected);
       setError("");
     } else {
@@ -23,10 +25,17 @@ const UploadForm = () => {
   };
   return (
     <form>
-      <input type="file" onChange={onChangeHandler} />
+      <label>
+        {" "}
+        +
+        <input type="file" onChange={onChangeHandler} />
+      </label>
       <div className="output">
         {error && <div className="error">{error}</div>}
         {file && <div className="file">{file.name}</div>}
+        {/* pass file to use it with the useStorage hook */}
+        {/* pass the setFile also >> when the file upload compeleted setFile(null) to display progress bar */}
+        {file && <ProgressBar file={file} setFile={setFile} />}
       </div>
     </form>
   );

@@ -1,5 +1,6 @@
 // Import the functions you need from the SDKs you need
 import * as firebase from "firebase/app";
+
 //import firestore & storage sdk
 import "firebase/firestore";
 import "firebase/storage";

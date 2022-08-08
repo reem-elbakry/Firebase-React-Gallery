@@ -8,10 +8,10 @@ const useStorage = (file) => {
   const [url, setUrl] = useState(null);
 
   useEffect(() => {
-    //refs
+    //create a ref
     const storageRef = appStorage.ref(file.name);
 
-    //upload the file to the ref
+    //try to upload the file to the ref
     //async func
     storageRef.put(file).on(
       "state_changed",
