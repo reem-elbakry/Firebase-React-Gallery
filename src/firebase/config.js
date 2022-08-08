@@ -29,3 +29,5 @@ const appFirestore = firebase.firestore();
 const timestamp = firebase.firestore.FieldValue.serverTimestamp;
 
 export { appStorage, appFirestore, timestamp };
+
+//listen to this collection to get all urls in real time
