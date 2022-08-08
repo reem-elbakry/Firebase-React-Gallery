@@ -12,7 +12,7 @@ const Title = () => {
       <span>Gallery</span>
 
       <h2>Your Pictures</h2>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      <p>Save your memories.</p>
     </div>
   );
 };
